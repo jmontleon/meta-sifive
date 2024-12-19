@@ -1,0 +1,25 @@
+From c056d7cc47aba56c9f35f3bfe61c4e9ff3c0b5d2 Mon Sep 17 00:00:00 2001
+From: jason <jason@Ubuntu22.04LTS>
+Date: Thu, 19 Dec 2024 10:29:04 -0500
+Subject: [PATCH] add nvme0 to boot_targets for p550
+
+---
+ include/configs/hifive_premier_p550.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/hifive_premier_p550.h b/include/configs/hifive_premier_p550.h
+index 0c7c132aa5..1ee6451cd4 100644
+--- a/include/configs/hifive_premier_p550.h
++++ b/include/configs/hifive_premier_p550.h
+@@ -40,7 +40,7 @@
+     "uuid_swap=5ebcaaf0-e098-43b9-beef-1f8deedd135e\0" \
+     "partitions=name=boot,start=1MiB,size=512MiB,type=${typeid_efi},uuid=${uuid_boot};name=swap,size=4096MiB,type=${typeid_swap},uuid=${uuid_swap};name=root,size=30GiB,type=${typeid_filesystem},uuid=${uuid_root};name=userdata,type=${typeid_filesystem},size=-;\0" \
+     "gpt_partition=gpt write mmc ${emmc_dev} $partitions\0" \
+-    "boot_targets=mmc1 usb sata mmc0\0"
++    "boot_targets=mmc1 usb nvme0 sata mmc0\0"
+ 
+ #undef CONFIG_BOOTCOMMAND
+ #define CONFIG_BOOTCOMMAND \
+-- 
+2.34.1
+
