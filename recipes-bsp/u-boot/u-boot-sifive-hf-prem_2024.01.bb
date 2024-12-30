@@ -17,7 +17,8 @@ SRC_URI = "git://github.com/eswincomputing/u-boot.git;protocol=https;branch=u-bo
            file://uefi-Add-all-options-for-EFI-System-Partitions.patch \
            file://uefi-distro-load-FDT-from-any-partition-on-boot-device.patch \
            file://uefi-initial-find_fdt_location-for-finding-the-DT-on-disk.patch \
-           file://0001-add-nvme0-to-boot_targets-for-p550.patch"
+           file://0001-add-nvme0-to-boot_targets-for-p550.patch \
+           file://0001-Unset-fdt_high-and-initrd_high.patch"
 
 do_deploy:append () {
 	install -m 755 ${B}/u-boot.dtb ${DEPLOYDIR}

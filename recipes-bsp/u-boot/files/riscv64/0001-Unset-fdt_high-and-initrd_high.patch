@@ -1,0 +1,25 @@
+From ab5c9c070f37ac1953805cb4860bb58fd15cd013 Mon Sep 17 00:00:00 2001
+From: jason <jason@Ubuntu22.04LTS>
+Date: Mon, 30 Dec 2024 12:34:21 -0500
+Subject: [PATCH] Unset fdt_high and initrd_high
+
+---
+ include/configs/hifive_premier_p550.h | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/include/configs/hifive_premier_p550.h b/include/configs/hifive_premier_p550.h
+index 15cb9b6078..e75f84e4a0 100644
+--- a/include/configs/hifive_premier_p550.h
++++ b/include/configs/hifive_premier_p550.h
+@@ -30,8 +30,6 @@
+ 
+ #define CFG_EXTRA_ENV_SETTINGS \
+     "bootdelay=2\0" \
+-    "fdt_high=0xffffffffffffffff\0" \
+-    "initrd_high=0xffffffffffffffff\0" \
+     "kernel_addr_r=0x84000000\0" \
+     "fdt_addr_r=0x88000000\0" \
+     "fdtfile=eswin/eic7700-hifive-premier-p550.dtb\0" \
+-- 
+2.34.1
+
